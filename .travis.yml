@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  - 10.15.3
+  - 10
 install:
   - npm ci
 cache: npm
 before_script:
   - npm run lint
-  script:
+script:
   - node deploy.js
