@@ -20,5 +20,5 @@ bot.setWebHook(`${url}/bot${TOKEN}/setWebhook?`)
 
 // Just to ping!
 bot.on('message', (msg) => {
-  bot.sendMessage(msg.chat.id, 'I am alive on Zeit Now!')
+  bot.sendMessage(msg.from.id, 'I am alive on Zeit Now!')
 })
