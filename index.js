@@ -19,6 +19,6 @@ const bot = new TelegramBot(TOKEN, { polling: true })
 bot.setWebHook(`${url}/bot${TOKEN}/setWebhook?`)
 
 // Just to ping!
-bot.on('message', function onMessage (msg) {
+bot.on('message', (msg) => {
   bot.sendMessage(msg.chat.id, 'I am alive on Zeit Now!')
 })
