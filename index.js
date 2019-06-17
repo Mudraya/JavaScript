@@ -12,7 +12,7 @@ const TelegramBot = require('node-telegram-bot-api')
 //   }
 // }
 // This URL must route to the port set above (i.e. 443)
-const url = 'https://javascript.mudrayaod.now.sh/'
+const url = 'https://javascript.mudrayaod.now.sh'
 const bot = new TelegramBot(TOKEN, { polling: true })
 
 // This informs the Telegram servers of the new webhook.
