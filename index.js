@@ -16,7 +16,7 @@ const url = 'https://javascript.mudrayaod.now.sh'
 const bot = new TelegramBot(TOKEN, { polling: true })
 
 // This informs the Telegram servers of the new webhook.
-bot.setWebHook(`${url}/bot${TOKEN}/setWebhook?`)
+bot.setWebHook(`${url}/bot${TOKEN}`)
 
 // Just to ping!
 bot.on('message', (msg) => {
