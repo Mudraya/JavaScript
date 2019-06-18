@@ -7,5 +7,5 @@ cache: npm
 before_script:
   - npm run lint
 script:
-  - node deploy.js
+#  - node deploy.js
   - now --token $zeittoken
