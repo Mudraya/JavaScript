@@ -2,8 +2,7 @@
   "version": 2,
   "name": "javascript",
   "builds": [{ "src": "index.js", "use": "@now/node", "config": { "maxLambdaSize": "15mb" } }],
-  "alias": ["javascript.mudrayaod.now.sh"],
   "routes": [
-    { "src": "/", "dest": "index.js" }
+    { "src": "/", "dest": "www/index.html" }
   ]
 }

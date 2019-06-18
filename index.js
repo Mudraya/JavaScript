@@ -4,7 +4,7 @@
  */
 
 // var fs = require('file-system');
-const TOKEN = process.env.TELEGRAM_TOKEN || '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
+const TOKEN = '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
 const TelegramBot = require('node-telegram-bot-api')
 // const options = {
 //   webHook: {
