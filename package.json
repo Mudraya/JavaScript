@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .gitignore . --fix"
   },
@@ -27,6 +28,7 @@
     "now": "^15.0.4"
   },
   "dependencies": {
+    "firebase": "^6.2.0",
     "http": "0.0.0",
     "jsdom": "^15.1.1",
     "node-telegram-bot-api": "^0.30.0"

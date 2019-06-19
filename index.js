@@ -1,22 +1,26 @@
 const http = require('http')
-// const firebase = require('firebase-admin')
+const firebase = require('firebase')
 const request = require('request')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const token = process.env['tg_api_key'] || '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
 const webHookUrl = 'https://javascript.mudrayaod.now.sh'
-// const webHookUrl = 'https://996da19a.ngrok.io'
+// const webHookUrl = 'https://4ae0f0f1.ngrok.io'
 
-// var config = {
-//   apiKey: 'apiKey',
-//   authDomain: 'projectId.firebaseapp.com',
-//   databaseURL: 'https://databaseName.firebaseio.com',
-//   storageBucket: 'bucket.appspot.com'
-// }
-//
-// firebase.initializeApp(config)
-//
-// var database = firebase.database()
+const firebaseConfig = {
+  apiKey: 'AIzaSyBy1Gw42dV8p7_elSE_mUezyTKtTmEhoOI',
+  authDomain: 'my-project-1544392816568.firebaseapp.com',
+  databaseURL: 'https://my-project-1544392816568.firebaseio.com',
+  projectId: 'my-project-1544392816568',
+  storageBucket: 'my-project-1544392816568.appspot.com',
+  messagingSenderId: '421573621280',
+  appId: '1:421573621280:web:cf0c483e1a1f8799'
+}
+
+firebase.initializeApp(firebaseConfig)
+
+const ref = firebase.database().ref()
+const msgRef = ref.child('msg')
 
 const sendMessage = (chatId, text, res) => {
   const sendMessageUrl = `https://api.telegram.org/bot${token}/sendMessage`
@@ -80,6 +84,10 @@ http.createServer(function (req, res) {
             JSDOM.fromURL('http://astroscope.ru/horoskop/ejednevniy_goroskop/' + text + '.html', optionsJsdom).then(dom => {
               let horoscope = dom.window.document.querySelectorAll('.p-3')[1].innerHTML
               sendMessage(chatId, horoscope, res)
+              msgRef.push().set({
+                chatId: chatId,
+                msg: text
+              })
             }
             )
           } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
@@ -90,7 +98,7 @@ http.createServer(function (req, res) {
       } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
     }
   })
-}).listen(8000)
+}).listen(3000)
 
 const setWebHook = () => {
   const setWebhookUrl = `https://api.telegram.org/bot${token}/setWebhook`
