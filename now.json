@@ -1,8 +1,5 @@
 {
   "version": 2,
   "name": "javascript",
-  "builds": [{ "src": "index.js", "use": "@now/node", "config": { "maxLambdaSize": "15mb" } }],
-  "routes": [
-    { "src": "/", "dest": "www/index.html" }
-  ]
+  "builds": [{ "src": "index.js", "use": "@now/node", "config": { "maxLambdaSize": "15mb" } }]
 }
