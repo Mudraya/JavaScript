@@ -116,6 +116,8 @@ const setWebHook = () => {
   (error, response, body) => {
     console.log(body)
     console.log(error)
+    response.writeHead(200, { 'Content-Type': 'text/html' })
+    response.end('OK')
   })
 }
 
