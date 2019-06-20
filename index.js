@@ -44,6 +44,7 @@ const sendMessage = (chatId, text, res) => {
 }
 
 module.exports = (req, res) => {
+  setWebHook()
   let data = ''
 
   req.on('data', chunk => {
@@ -116,5 +117,3 @@ const setWebHook = () => {
     console.log(error)
   })
 }
-
-setWebHook()
