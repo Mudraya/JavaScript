@@ -4,8 +4,8 @@ const request = require('request')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const token = process.env['tg_api_key'] || '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
-const webHookUrl = 'https://javascript.mudrayaod.now.sh'
-// const webHookUrl = 'https://4596ff4c.ngrok.io'
+// const webHookUrl = 'https://javascript.mudrayaod.now.sh'
+const webHookUrl = 'https://4596ff4c.ngrok.io'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBy1Gw42dV8p7_elSE_mUezyTKtTmEhoOI',
