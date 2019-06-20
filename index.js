@@ -93,7 +93,6 @@ http.createServer(function (req, res) {
             }
             )
           } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
-          responseHoroscope('OK')
         })
         requestHoroscope.on('error', function (error) {
           console.error(error.status)
