@@ -99,6 +99,8 @@ module.exports = (req, res) => {
       } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
     }
   })
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.end('OK')
 }
 
 const setWebHook = () => {
