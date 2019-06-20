@@ -39,6 +39,8 @@ const sendMessage = (chatId, text, res) => {
     console.log(body)
     res.writeHead(200, { 'Content-Type': 'text/html' })
     res.end('OK')
+    response.writeHead(200, { 'Content-Type': 'text/html' })
+    response.end('OK')
   }
   )
 }
@@ -91,6 +93,7 @@ http.createServer(function (req, res) {
             }
             )
           } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
+          responseHoroscope('OK')
         })
         requestHoroscope.on('error', function (error) {
           console.error(error.status)
