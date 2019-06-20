@@ -43,7 +43,7 @@ const sendMessage = (chatId, text, res) => {
   )
 }
 
-http.createServer(function (req, res) {
+module.exports = (req, res) => {
   let data = ''
 
   req.on('data', chunk => {
@@ -104,7 +104,7 @@ http.createServer(function (req, res) {
   })
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.end('OK')
-}).listen(3000)
+}
 
 const setWebHook = () => {
   const setWebhookUrl = `https://api.telegram.org/bot${token}/setWebhook`
