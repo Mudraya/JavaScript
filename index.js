@@ -38,7 +38,7 @@ const sendMessage = (chatId, text, res) => {
     console.log(error)
     console.log(body)
     res.writeHead(200, { 'Content-Type': 'text/html' })
-    res.end()
+    res.end('OK')
   }
   )
 }
@@ -97,6 +97,8 @@ http.createServer(function (req, res) {
         })
       } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
     }
+    res.writeHead(200, { 'Content-Type': 'text/html' })
+    res.end('OK')
   })
 }).listen(3000)
 
