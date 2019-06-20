@@ -4,7 +4,7 @@ const request = require('request')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const token = process.env['tg_api_key'] || '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
-const webHookUrl = 'https://javascript.mudrayaod.now.sh'
+const webHookUrl = 'my-project-1544392816568.firebaseapp.com'
 // const webHookUrl = 'https://4ae0f0f1.ngrok.io'
 
 const firebaseConfig = {
@@ -43,7 +43,7 @@ const sendMessage = (chatId, text, res) => {
   )
 }
 
-module.exports = (req, res) => {
+http.createServer(function (req, res) {
   let data = ''
 
   req.on('data', chunk => {
@@ -98,7 +98,7 @@ module.exports = (req, res) => {
       } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
     }
   })
-}
+}).listen(3000)
 
 const setWebHook = () => {
   const setWebhookUrl = `https://api.telegram.org/bot${token}/setWebhook`
