@@ -91,6 +91,8 @@ http.createServer(function (req, res) {
             }
             )
           } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
+          res.writeHead(200, { 'Content-Type': 'text/html' })
+          res.end('OK')
         })
         requestHoroscope.on('error', function (error) {
           console.error(error.status)
@@ -100,6 +102,8 @@ http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' })
     res.end('OK')
   })
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.end('OK')
 }).listen(3000)
 
 const setWebHook = () => {
