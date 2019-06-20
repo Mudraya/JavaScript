@@ -25,7 +25,7 @@ const msgRef = ref.child('msg')
 const sendMessage = (chatId, text, res) => {
   const sendMessageUrl = `https://api.telegram.org/bot${token}/sendMessage`
 
-  request.post({
+  request({
     url: sendMessageUrl,
     method: 'post',
     body: {
@@ -104,12 +104,12 @@ http.createServer(function (req, res) {
   })
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.end('OK')
-}).listen()
+}).listen(3000)
 
 const setWebHook = () => {
   const setWebhookUrl = `https://api.telegram.org/bot${token}/setWebhook`
 
-  request.post({
+  request({
     url: setWebhookUrl,
     method: 'post',
     body: {
