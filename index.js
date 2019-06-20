@@ -43,8 +43,7 @@ const sendMessage = (chatId, text, res) => {
   )
 }
 
-module.exports = (req, res) => {
-  setWebHook()
+http.createServer(function (req, res) {
   let data = ''
 
   req.on('data', chunk => {
@@ -99,9 +98,7 @@ module.exports = (req, res) => {
       } else { sendMessage(chatId, 'Пожалуйста, придерживайся инструкции ;)', res) }
     }
   })
-  res.writeHead(200, { 'Content-Type': 'text/html' })
-  res.end('OK')
-}
+}).listen(3000)
 
 const setWebHook = () => {
   const setWebhookUrl = `https://api.telegram.org/bot${token}/setWebhook`
@@ -119,3 +116,5 @@ const setWebHook = () => {
     console.log(error)
   })
 }
+
+setWebHook()
