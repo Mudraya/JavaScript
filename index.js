@@ -5,7 +5,7 @@ const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const token = process.env['tg_api_key'] || '755380132:AAH326o9uguBRBOC9qpGX_n5TvQug85W8Ys'
 const webHookUrl = 'https://javascript.mudrayaod.now.sh'
-// const webHookUrl = 'https://4ae0f0f1.ngrok.io'
+// const webHookUrl = 'https://4596ff4c.ngrok.io'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBy1Gw42dV8p7_elSE_mUezyTKtTmEhoOI',
@@ -39,8 +39,6 @@ const sendMessage = (chatId, text, res) => {
     console.log(body)
     res.writeHead(200, { 'Content-Type': 'text/html' })
     res.end('OK')
-    response.writeHead(200, { 'Content-Type': 'text/html' })
-    response.end('OK')
   }
   )
 }
@@ -118,8 +116,6 @@ const setWebHook = () => {
   (error, response, body) => {
     console.log(body)
     console.log(error)
-    response.writeHead(200, { 'Content-Type': 'text/html' })
-    response.end('OK')
   })
 }
 
